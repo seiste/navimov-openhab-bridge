@@ -1,0 +1,15 @@
+{
+  "device_id": "YOUR_DEVICE_ID",
+  "poll_seconds": 300,
+  "openhab_base_url": "http://127.0.0.1:8090",
+  "openhab_api_token": "",
+  "tokens_file": "navimow_tokens.json",
+  "oauth": {
+    "client_id": "homeassistant",
+    "client_secret": "",
+    "authorize_url": "https://navimow-h5-fra.willand.com/smartHome/login?channel=homeassistant",
+    "token_url": "https://navimow-fra.ninebot.com/openapi/oauth/getAccessToken",
+    "api_base_url": "https://navimow-fra.ninebot.com",
+    "redirect_uri": "http://127.0.0.1:8765/callback"
+  }
+}

@@ -1,0 +1,15 @@
+config.json
+navimow_tokens*.json
+.env
+.venv/
+venv/
+bin/
+lib/
+include/
+pyvenv.cfg
+__pycache__/
+*.py[cod]
+*.log
+*~
+*.bak
+.pytest_cache/
