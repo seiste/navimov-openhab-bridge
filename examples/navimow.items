@@ -1,0 +1,7 @@
+String Navimow_Status "Navimow status [%s]"
+String Navimow_VehicleState "Navimow vehicle state [%s]"
+Number Navimow_Battery "Navimow battery [%.0f %%]"
+String Navimow_Error "Navimow error [%s]"
+String Navimow_ErrorMessage "Navimow error message [%s]"
+Switch Navimow_Online "Navimow bridge online"
+DateTime Navimow_LastUpdate "Last successful update [%1$tF %1$tT]"
