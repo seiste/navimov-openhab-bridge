@@ -1,0 +1,18 @@
+[Unit]
+Description=Navimow to openHAB bridge
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=navimow
+Group=navimow
+WorkingDirectory=/opt/navimow-openhab-bridge
+Environment=NAVIMOW_CONFIG=/opt/navimow-openhab-bridge/config.json
+ExecStart=/opt/navimow-openhab-bridge/.venv/bin/python /opt/navimow-openhab-bridge/navimow_to_openhab.py
+Restart=on-failure
+RestartSec=30
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

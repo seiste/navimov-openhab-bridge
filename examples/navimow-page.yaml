@@ -1,0 +1,99 @@
+# SPDX-License-Identifier: GPL-3.0-only
+# Requires the items from navimow.items. See README.md for installation.
+version: 1
+pages:
+  navimow:
+    tags: []
+    props:
+      parameters: []
+      parameterGroups: []
+    component: oh-layout-page
+    config:
+      label: Navimow
+      sidebar: true
+      title: Navimow
+    slots:
+      canvas: []
+      default:
+        - component: oh-block
+          config:
+            title: Navimow Status
+          slots:
+            default:
+              - component: oh-grid-row
+                slots:
+                  default:
+                    - component: oh-grid-col
+                      config:
+                        medium: 50
+                        width: 100
+                      slots:
+                        default:
+                          - component: oh-label-card
+                            config:
+                              color: "=(items.Navimow_Online.state === 'ON') ? 'green' : 'red'"
+                              footer: =items.Navimow_VehicleState.state
+                              icon: oh:lawnmower
+                              item: Navimow_Status
+                              title: Status
+                    - component: oh-grid-col
+                      config:
+                        medium: 50
+                        width: 100
+                      slots:
+                        default:
+                          - component: oh-gauge-card
+                            config:
+                              icon: oh:battery
+                              item: Navimow_Battery
+                              max: 100
+                              min: 0
+                              title: Battery
+                              unit: "%"
+        - component: oh-block
+          config:
+            title: Details
+          slots:
+            default:
+              - component: oh-list-card
+                config:
+                  title: Details
+                slots:
+                  default:
+                    - component: oh-label-item
+                      config:
+                        icon: oh:lawnmower
+                        item: Navimow_Status
+                        title: Status
+                    - component: oh-label-item
+                      config:
+                        icon: oh:settings
+                        item: Navimow_VehicleState
+                        title: Vehicle State
+                    - component: oh-label-item
+                      config:
+                        icon: oh:battery
+                        item: Navimow_Battery
+                        title: Battery
+                    - component: oh-label-item
+                      config:
+                        icon: oh:error
+                        item: Navimow_Error
+                        title: Error Code
+                    - component: oh-label-item
+                      config:
+                        icon: oh:message
+                        item: Navimow_ErrorMessage
+                        title: Error Message
+                    - component: oh-label-item
+                      config:
+                        icon: oh:network
+                        item: Navimow_Online
+                        title: Bridge Online
+                    - component: oh-label-item
+                      config:
+                        icon: oh:time
+                        item: Navimow_LastUpdate
+                        title: Last Successful Update
+      grid: []
+      masonry: []
